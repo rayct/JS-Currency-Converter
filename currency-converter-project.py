@@ -13,7 +13,7 @@ class RealTimeCurrencyConverter():
 
     def convert(self, from_currency, to_currency, amount): 
         initial_amount = amount 
-        if from_currency != 'USD' : 
+        if from_currency != 'GBP' : 
             amount = amount / self.currencies[from_currency] 
   
         # limiting the precision to 4 decimal places 
@@ -31,10 +31,10 @@ class App(tk.Tk):
         self.geometry("500x200")
         
         # Label
-        self.intro_label = Label(self, text = 'Welcome to Real Time Currency Convertor',  fg = 'blue', relief = tk.RAISED, borderwidth = 3)
+        self.intro_label = Label(self, text = 'Welcome to Rays Real Time Currency Convertor',  fg = 'blue', relief = tk.RAISED, borderwidth = 3)
         self.intro_label.config(font = ('Courier',15,'bold'))
 
-        self.date_label = Label(self, text = f"1 Indian Rupee equals = {self.currency_converter.convert('INR','USD',1)} USD \n Date : {self.currency_converter.data['date']}", relief = tk.GROOVE, borderwidth = 5)
+        self.date_label = Label(self, text = f"1 Indian Rupee equals = {self.currency_converter.convert('USD','GBP',1)} GBP \n Date : {self.currency_converter.data['date']}", relief = tk.GROOVE, borderwidth = 5)
 
         self.intro_label.place(x = 10 , y = 5)
         self.date_label.place(x = 160, y= 50)
@@ -83,7 +83,7 @@ class App(tk.Tk):
         return (string == "" or (string.count('.') <= 1 and result is not None))
 
 if __name__ == '__main__':
-    url = 'https://api.exchangerate-api.com/v4/latest/USD'
+    url = 'https://api.exchangerate-api.com/v4/latest/GBP'
     converter = RealTimeCurrencyConverter(url)
 
     App(converter)
