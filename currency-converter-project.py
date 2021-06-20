@@ -46,9 +46,9 @@ class App(tk.Tk):
 
         # dropdown
         self.from_currency_variable = StringVar(self)
-        self.from_currency_variable.set("INR") # default value
+        self.from_currency_variable.set("USD") # default value
         self.to_currency_variable = StringVar(self)
-        self.to_currency_variable.set("USD") # default value
+        self.to_currency_variable.set("GBP") # default value
 
         font = ("Courier", 12, "bold")
         self.option_add('*TCombobox*Listbox.font', font)
