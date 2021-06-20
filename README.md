@@ -1,1 +1,1 @@
-# JS-Currency-Converter
+# Python-Currency-Converter
